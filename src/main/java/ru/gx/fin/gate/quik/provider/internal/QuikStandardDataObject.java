@@ -8,8 +8,8 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ru.gx.data.AbstractDataObject;
-import ru.gx.utils.StringUtils;
+import ru.gx.core.data.AbstractDataObject;
+import ru.gx.core.utils.StringUtils;
 
 @Getter
 @Setter

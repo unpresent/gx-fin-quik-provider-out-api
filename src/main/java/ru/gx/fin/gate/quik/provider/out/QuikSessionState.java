@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.jetbrains.annotations.NotNull;
-import ru.gx.data.AbstractDataObject;
+import ru.gx.core.data.AbstractDataObject;
 
 import java.time.LocalTime;
 

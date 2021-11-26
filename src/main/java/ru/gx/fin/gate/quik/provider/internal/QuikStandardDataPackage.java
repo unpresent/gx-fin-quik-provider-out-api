@@ -1,7 +1,7 @@
 package ru.gx.fin.gate.quik.provider.internal;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import ru.gx.data.AbstractDataPackage;
+import ru.gx.core.data.AbstractDataPackage;
 
 public abstract class QuikStandardDataPackage<T extends QuikStandardDataObject> extends AbstractDataPackage<T> {
     /**
