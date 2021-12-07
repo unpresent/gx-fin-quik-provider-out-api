@@ -1,5 +1,6 @@
 package ru.gx.fin.gate.quik.provider.out;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -30,6 +31,7 @@ public class QuikSecurity extends QuikStandardDataObject {
      * Дата актуализации (т.е. дата, когда данная запись была опубликована.
      * Для отслеживания устаревших записей.
      */
+    @JsonFormat(pattern = "yyy-MM-dd")
     @NotNull
     private LocalDate actualDate;
 
@@ -83,6 +85,7 @@ public class QuikSecurity extends QuikStandardDataObject {
     /**
      * Дата погашения
      */
+    @JsonFormat(pattern = "yyy-MM-dd")
     @Nullable
     private final LocalDate maturityDate;
 
