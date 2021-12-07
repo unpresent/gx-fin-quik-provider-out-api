@@ -7,9 +7,11 @@ import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import ru.gx.fin.gate.quik.provider.internal.QuikStandardDataObject;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  * Инструмент
@@ -25,6 +27,13 @@ public class QuikSecurity extends QuikStandardDataObject {
     private final String id;
 
     /**
+     * Дата актуализации (т.е. дата, когда данная запись была опубликована.
+     * Для отслеживания устаревших записей.
+     */
+    @NotNull
+    private LocalDate actualDate;
+
+    /**
      * Код инструмента
      */
     @NotNull
@@ -33,11 +42,13 @@ public class QuikSecurity extends QuikStandardDataObject {
     /**
      * Наименование инструмента
      */
+    @Nullable
     private final String name;
 
     /**
      * Короткое наименование инструмента
      */
+    @Nullable
     private final String shortName;
 
     /**
@@ -49,16 +60,19 @@ public class QuikSecurity extends QuikStandardDataObject {
     /**
      * Наименование класса инструментов
      */
+    @Nullable
     private final String className;
 
     /**
      * Номинал
      */
+    @Nullable
     private final BigDecimal faceValue;
 
     /**
      * Валюта номинала
      */
+    @Nullable
     private final String faceUnit;
 
     /**
@@ -69,37 +83,42 @@ public class QuikSecurity extends QuikStandardDataObject {
     /**
      * Дата погашения
      */
-    private final long maturityDate;
+    @Nullable
+    private final LocalDate maturityDate;
 
     /**
      * Размер лота
      */
+    @Nullable
     private final BigDecimal lotSize;
 
     /**
      * ISIN
      */
+    @Nullable
     private final String isinCode;
 
     /**
      * Минимальный шаг цены
      */
+    @Nullable
     private final BigDecimal minPriceStep;
 
     public QuikSecurity(
             final int rowIndex,
+            @NotNull LocalDate actualDate,
             @NotNull String code,
-            String name,
-            String shortName,
+            @Nullable String name,
+            @Nullable String shortName,
             @NotNull String classCode,
-            String className,
-            BigDecimal faceValue,
-            String faceUnit,
+            @Nullable String className,
+            @Nullable BigDecimal faceValue,
+            @Nullable String faceUnit,
             int scale,
-            long maturityDate,
-            BigDecimal lotSize,
-            String isinCode,
-            BigDecimal minPriceStep
+            @Nullable LocalDate maturityDate,
+            @Nullable BigDecimal lotSize,
+            @Nullable String isinCode,
+            @Nullable BigDecimal minPriceStep
     ) {
         super(rowIndex);
         this.code = code;
