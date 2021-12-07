@@ -121,6 +121,7 @@ public class QuikSecurity extends QuikStandardDataObject {
             @Nullable BigDecimal minPriceStep
     ) {
         super(rowIndex);
+        this.actualDate = actualDate;
         this.code = code;
         this.name = name;
         this.shortName = shortName;
