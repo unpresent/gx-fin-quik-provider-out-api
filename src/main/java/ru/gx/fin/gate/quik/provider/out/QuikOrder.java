@@ -157,13 +157,13 @@ public class QuikOrder extends QuikStandardDataObject {
     /**
      * Дата и время
      */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     private final LocalDateTime tradeDateTime;
 
     /**
      * Дата и время снятия заявки
      */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     private final LocalDateTime withdrawDateTime;
 
     /**

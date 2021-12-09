@@ -31,7 +31,7 @@ public class QuikSecurity extends QuikStandardDataObject {
      * Дата актуализации (т.е. дата, когда данная запись была опубликована.
      * Для отслеживания устаревших записей.
      */
-    @JsonFormat(pattern = "yyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @NotNull
     private LocalDate actualDate;
 
@@ -85,7 +85,7 @@ public class QuikSecurity extends QuikStandardDataObject {
     /**
      * Дата погашения
      */
-    @JsonFormat(pattern = "yyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Nullable
     private final LocalDate maturityDate;
 

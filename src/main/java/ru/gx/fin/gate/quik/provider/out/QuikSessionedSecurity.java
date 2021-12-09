@@ -83,7 +83,7 @@ public class QuikSessionedSecurity extends QuikStandardDataObject {
     /**
      * Дата погашения
      */
-    @JsonFormat(pattern = "yyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     @Nullable
     private final LocalDate maturityDate;
 

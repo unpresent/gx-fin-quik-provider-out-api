@@ -217,7 +217,7 @@ public class QuikDeal extends QuikStandardDataObject {
     /**
      * Дата и время
      */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     private final LocalDateTime tradeDateTime;
 
     /**
@@ -284,7 +284,7 @@ public class QuikDeal extends QuikStandardDataObject {
     /**
      * Дата и время снятия сделки
      */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     private final LocalDateTime canceledDateTime;
 
     /**

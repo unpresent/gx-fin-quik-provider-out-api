@@ -51,7 +51,7 @@ public class QuikAllTrade extends QuikStandardDataObject {
     /**
      * Дата и время
      */
-    @JsonFormat(pattern = "yyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     @NotNull
     private final LocalDateTime tradeDateTime;
 
