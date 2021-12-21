@@ -1,7 +1,9 @@
 package ru.gx.fin.gate.quik.provider.out;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -105,21 +107,22 @@ public class QuikSessionedSecurity extends QuikStandardDataObject {
     @Nullable
     private final BigDecimal minPriceStep;
 
+    @JsonCreator
     public QuikSessionedSecurity(
-            final int rowIndex,
-            @NotNull String sessionId,
-            @NotNull String code,
-            @Nullable String name,
-            @Nullable String shortName,
-            @NotNull String classCode,
-            @Nullable String className,
-            @Nullable BigDecimal faceValue,
-            @Nullable String faceUnit,
-            int scale,
-            @Nullable LocalDate maturityDate,
-            @Nullable BigDecimal lotSize,
-            @Nullable String isinCode,
-            @Nullable BigDecimal minPriceStep
+            @JsonProperty("rowIndex") final int rowIndex,
+            @JsonProperty("sessionId") @NotNull String sessionId,
+            @JsonProperty("code") @NotNull String code,
+            @JsonProperty("name") @Nullable String name,
+            @JsonProperty("shortName") @Nullable String shortName,
+            @JsonProperty("classCode") @NotNull String classCode,
+            @JsonProperty("className") @Nullable String className,
+            @JsonProperty("faceValue") @Nullable BigDecimal faceValue,
+            @JsonProperty("faceUnit") @Nullable String faceUnit,
+            @JsonProperty("scale") int scale,
+            @JsonProperty("maturityDate") @Nullable LocalDate maturityDate,
+            @JsonProperty("lotSize") @Nullable BigDecimal lotSize,
+            @JsonProperty("isinCode") @Nullable String isinCode,
+            @JsonProperty("minPriceStep") @Nullable BigDecimal minPriceStep
     ) {
         super(rowIndex);
         this.sessionId = sessionId;

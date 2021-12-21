@@ -2,6 +2,7 @@ package ru.gx.fin.gate.quik.provider.out;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -140,25 +141,25 @@ public class QuikAllTrade extends QuikStandardDataObject {
     private final int openInterest;
 
     public QuikAllTrade(
-            final int rowIndex,
-            @Nullable final String exchangeCode,
-            @NotNull final String tradeNum,
-            @Nullable final QuikDealDirection direction,
-            @NotNull final LocalDateTime tradeDateTime,
-            @NotNull final String classCode,
-            @Nullable final String secCode,
-            @Nullable final BigDecimal price,
-            @Nullable final BigDecimal quantity,
-            @Nullable final BigDecimal value,
-            @Nullable final BigDecimal accruedInterest,
-            @Nullable final BigDecimal yield,
-            @Nullable final String settleCode,
-            @Nullable final BigDecimal repoRate,
-            @Nullable final BigDecimal repoValue,
-            @Nullable final BigDecimal repo2Value,
-            final int repoTerm,
-            final short period,
-            final int openInterest
+            @JsonProperty("rowIndex") final int rowIndex,
+            @JsonProperty("exchangeCode") @Nullable final String exchangeCode,
+            @JsonProperty("tradeNum") @NotNull final String tradeNum,
+            @JsonProperty("direction") @Nullable final QuikDealDirection direction,
+            @JsonProperty("tradeDateTime") @NotNull final LocalDateTime tradeDateTime,
+            @JsonProperty("classCode") @NotNull final String classCode,
+            @JsonProperty("secCode") @Nullable final String secCode,
+            @JsonProperty("price") @Nullable final BigDecimal price,
+            @JsonProperty("quantity") @Nullable final BigDecimal quantity,
+            @JsonProperty("value") @Nullable final BigDecimal value,
+            @JsonProperty("accruedInterest") @Nullable final BigDecimal accruedInterest,
+            @JsonProperty("yield") @Nullable final BigDecimal yield,
+            @JsonProperty("settleCode") @Nullable final String settleCode,
+            @JsonProperty("repoRate") @Nullable final BigDecimal repoRate,
+            @JsonProperty("repoValue") @Nullable final BigDecimal repoValue,
+            @JsonProperty("repo2Value") @Nullable final BigDecimal repo2Value,
+            @JsonProperty("repoTerm") final int repoTerm,
+            @JsonProperty("period") final short period,
+            @JsonProperty("openInterest") final int openInterest
     ) {
         super(rowIndex);
         this.exchangeCode = extractExchangeCode(exchangeCode, classCode);

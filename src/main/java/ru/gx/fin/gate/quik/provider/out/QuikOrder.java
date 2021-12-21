@@ -1,7 +1,9 @@
 package ru.gx.fin.gate.quik.provider.out;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -252,50 +254,51 @@ public class QuikOrder extends QuikStandardDataObject {
      */
     private final BigDecimal visible;
 
+    @JsonCreator
     public QuikOrder(
-            final int rowIndex,
-            @Nullable String exchangeCode,
-            @NotNull String orderNum,
-            QuikDealDirection direction,
-            String brokerRef,
-            String userId,
-            String firmId,
-            String account,
-            BigDecimal price,
-            BigDecimal quantity,
-            BigDecimal balance,
-            BigDecimal value,
-            BigDecimal accruedInterest,
-            BigDecimal yield,
-            long transactionId,
-            String clientCode,
-            BigDecimal price2,
-            String settleCode,
-            long uid,
-            long canceledUid,
-            long activationTime,
-            long linkedOrder,
-            long expiry,
-            String secCode,
-            @NotNull String classCode,
-            LocalDateTime tradeDateTime,
-            LocalDateTime withdrawDateTime,
-            String bankAccountId,
-            byte valueEntryType,
-            int repoTerm,
-            BigDecimal repoValue,
-            BigDecimal repo2Value,
-            BigDecimal repoValueBalance,
-            BigDecimal startDiscount,
-            String rejectReason,
-            int extOrderFlags,
-            BigDecimal minQuantity,
-            int execType,
-            int sideQualifier,
-            int accountType,
-            BigDecimal capacity,
-            byte passiveOnlyOrder,
-            BigDecimal visible
+            @JsonProperty("rowIndex") final int rowIndex,
+            @JsonProperty("exchangeCode") @Nullable String exchangeCode,
+            @JsonProperty("orderNum") @NotNull String orderNum,
+            @JsonProperty("direction") QuikDealDirection direction,
+            @JsonProperty("brokerRef") String brokerRef,
+            @JsonProperty("userId") String userId,
+            @JsonProperty("firmId") String firmId,
+            @JsonProperty("account") String account,
+            @JsonProperty("price") BigDecimal price,
+            @JsonProperty("quantity") BigDecimal quantity,
+            @JsonProperty("balance") BigDecimal balance,
+            @JsonProperty("value") BigDecimal value,
+            @JsonProperty("accruedInterest") BigDecimal accruedInterest,
+            @JsonProperty("yield") BigDecimal yield,
+            @JsonProperty("transactionId") long transactionId,
+            @JsonProperty("clientCode") String clientCode,
+            @JsonProperty("price2") BigDecimal price2,
+            @JsonProperty("settleCode") String settleCode,
+            @JsonProperty("uid") long uid,
+            @JsonProperty("canceledUid") long canceledUid,
+            @JsonProperty("activationTime") long activationTime,
+            @JsonProperty("linkedOrder") long linkedOrder,
+            @JsonProperty("expiry") long expiry,
+            @JsonProperty("secCode") String secCode,
+            @JsonProperty("classCode") @NotNull String classCode,
+            @JsonProperty("tradeDateTime") LocalDateTime tradeDateTime,
+            @JsonProperty("withdrawDateTime") LocalDateTime withdrawDateTime,
+            @JsonProperty("bankAccountId") String bankAccountId,
+            @JsonProperty("valueEntryType") byte valueEntryType,
+            @JsonProperty("repoTerm") int repoTerm,
+            @JsonProperty("repoValue") BigDecimal repoValue,
+            @JsonProperty("repo2Value") BigDecimal repo2Value,
+            @JsonProperty("repoValueBalance") BigDecimal repoValueBalance,
+            @JsonProperty("startDiscount") BigDecimal startDiscount,
+            @JsonProperty("rejectReason") String rejectReason,
+            @JsonProperty("extOrderFlags") int extOrderFlags,
+            @JsonProperty("minQuantity") BigDecimal minQuantity,
+            @JsonProperty("execType") int execType,
+            @JsonProperty("sideQualifier") int sideQualifier,
+            @JsonProperty("accountType") int accountType,
+            @JsonProperty("capacity") BigDecimal capacity,
+            @JsonProperty("passiveOnlyOrder") byte passiveOnlyOrder,
+            @JsonProperty("visible") BigDecimal visible
     ) {
         super(rowIndex);
         this.exchangeCode = extractExchangeCode(exchangeCode, classCode);
