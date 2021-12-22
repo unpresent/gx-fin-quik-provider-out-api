@@ -6,7 +6,7 @@ import ru.gx.fin.gate.quik.provider.out.QuikDeal;
 import ru.gx.fin.gate.quik.provider.out.QuikSessionedSecurity;
 
 @SuppressWarnings("unused")
-public class QuikSessionedSecurityExtractor implements DataObjectKeyExtractor<QuikSessionedSecurity> {
+public class QuikSessionedSecurityKeyExtractor implements DataObjectKeyExtractor<QuikSessionedSecurity> {
     @Override
     public Object extractKey(@NotNull QuikSessionedSecurity dataObject) {
         return dataObject.getId();

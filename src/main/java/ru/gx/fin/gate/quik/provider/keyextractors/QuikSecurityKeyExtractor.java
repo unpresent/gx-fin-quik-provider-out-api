@@ -5,7 +5,7 @@ import ru.gx.core.data.DataObjectKeyExtractor;
 import ru.gx.fin.gate.quik.provider.out.QuikSecurity;
 
 @SuppressWarnings("unused")
-public class QuikSecurityExtractor implements DataObjectKeyExtractor<QuikSecurity> {
+public class QuikSecurityKeyExtractor implements DataObjectKeyExtractor<QuikSecurity> {
     @Override
     public Object extractKey(@NotNull QuikSecurity dataObject) {
         return dataObject.getId();
