@@ -5,27 +5,20 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
-@ConfigurationProperties(prefix = "service")
+@ConfigurationProperties(prefix = "service.channels-api")
 @Getter
 @Setter
-public class ConfigurationPropertiesService {
+public class ConfigurationPropertiesServiceChannelsApi {
 
     @NestedConfigurationProperty
-    public ChannelsApi channelsApi;
+    public Streams quikProviderStreams;
+
+    @NestedConfigurationProperty
+    public Snapshots quikProviderSnapshots;
 
     @Getter
     @Setter
-    public static class ChannelsApi {
-        @NestedConfigurationProperty
-        public QuikProviderStreams quikProviderStreams;
-
-        @NestedConfigurationProperty
-        public QuikProviderSnapshots quikProviderSnapshots;
-    }
-
-    @Getter
-    @Setter
-    public static class QuikProviderStreams {
+    public static class Streams {
         @NestedConfigurationProperty
         public Enabled securitiesV1;
 
@@ -41,7 +34,7 @@ public class ConfigurationPropertiesService {
 
     @Getter
     @Setter
-    public static class QuikProviderSnapshots {
+    public static class Snapshots {
         @NestedConfigurationProperty
         public Enabled securitiesV1;
     }

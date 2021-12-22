@@ -9,7 +9,7 @@ import ru.gx.fin.gate.quik.provider.channels.*;
 import ru.gx.fin.gate.quik.provider.messages.*;
 
 @Configuration
-@EnableConfigurationProperties({ConfigurationPropertiesService.class})
+@EnableConfigurationProperties({ConfigurationPropertiesServiceChannelsApi.class})
 public class CommonAutoConfiguration {
     private static final String DOT_ENABLED = ".enabled";
 
