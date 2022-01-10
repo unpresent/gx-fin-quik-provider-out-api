@@ -2,6 +2,7 @@ package ru.gx.fin.gate.quik.provider.messages;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.gx.core.messaging.*;
@@ -11,6 +12,7 @@ import ru.gx.fin.gate.quik.provider.out.QuikAllTradesPackage;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
+@ToString(callSuper = true)
 public class QuikProviderStreamAllTradesPackageDataPublish
         extends AbstractMessage<QuikProviderStreamAllTradesPackageDataPublish.QuikProviderStreamAllTradesPackageDataPublishBody> {
     public static final int V1 = 1;
