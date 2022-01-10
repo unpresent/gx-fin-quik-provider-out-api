@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 @SuppressWarnings("unused")
 public class QuikProviderStreamDealsPackageDataPublish
-        extends AbstractDataPublish<QuikProviderStreamDealsPackageDataPublish.QuikProviderStreamDealsPackageDataPublishBody> {
+        extends AbstractMessage<QuikProviderStreamDealsPackageDataPublish.QuikProviderStreamDealsPackageDataPublishBody> {
     public static final int V1 = 1;
     public static final int[] SUPPORTED_VERSIONS = {V1};
 
@@ -37,7 +37,7 @@ public class QuikProviderStreamDealsPackageDataPublish
 
     @JsonCreator
     public QuikProviderStreamDealsPackageDataPublish(
-            @JsonProperty("header") @NotNull final DataPublishHeader header,
+            @JsonProperty("header") @NotNull final StandardMessageHeader header,
             @JsonProperty("body") @NotNull final QuikProviderStreamDealsPackageDataPublish.QuikProviderStreamDealsPackageDataPublishBody body,
             @JsonProperty("correlation") final @Nullable MessageCorrelation correlation
     ) {

@@ -1,7 +1,5 @@
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
-import ru.gx.fin.gate.quik.provider.out.QuikOrder;
-import ru.gx.fin.gate.quik.provider.out.QuikSecurity;
 import ru.gx.fin.gate.quik.provider.out.QuikSessionedSecurity;
 
 @Testable
