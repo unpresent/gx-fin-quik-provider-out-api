@@ -102,6 +102,12 @@ public class QuikSessionedSecurity extends QuikStandardDataObject {
     private final String isinCode;
 
     /**
+     * Валюта котировок и сделок с этим инструментом.
+     */
+    @Nullable
+    private final String currencyId;
+
+    /**
      * Минимальный шаг цены
      */
     @Nullable
@@ -122,6 +128,7 @@ public class QuikSessionedSecurity extends QuikStandardDataObject {
             @JsonProperty("maturityDate") @Nullable LocalDate maturityDate,
             @JsonProperty("lotSize") @Nullable BigDecimal lotSize,
             @JsonProperty("isinCode") @Nullable String isinCode,
+            @JsonProperty("currencyId") @Nullable String currencyId,
             @JsonProperty("minPriceStep") @Nullable BigDecimal minPriceStep
     ) {
         super(rowIndex);
@@ -137,6 +144,7 @@ public class QuikSessionedSecurity extends QuikStandardDataObject {
         this.maturityDate = maturityDate;
         this.lotSize = lotSize;
         this.isinCode = isinCode;
+        this.currencyId = currencyId;
         this.minPriceStep = minPriceStep;
         // Устанавливаем this.id!
         this.id = calcId();
