@@ -2,14 +2,11 @@ package ru.gx.fin.gate.quik.provider.messages;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Getter;
 import lombok.ToString;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import ru.gx.core.messaging.*;
 import ru.gx.fin.gate.quik.provider.config.QuikProviderMessageTypes;
-import ru.gx.fin.gate.quik.provider.out.QuikOrdersPackage;
-import ru.gx.fin.gate.quik.provider.out.QuikSecuritiesPackage;
 import ru.gx.fin.gate.quik.provider.out.QuikSessionedSecuritiesPackage;
 
 import java.util.Arrays;

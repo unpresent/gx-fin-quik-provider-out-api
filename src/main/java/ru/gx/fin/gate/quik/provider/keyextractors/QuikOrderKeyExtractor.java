@@ -2,7 +2,6 @@ package ru.gx.fin.gate.quik.provider.keyextractors;
 
 import org.jetbrains.annotations.NotNull;
 import ru.gx.core.data.DataObjectKeyExtractor;
-import ru.gx.fin.gate.quik.provider.out.QuikAllTrade;
 import ru.gx.fin.gate.quik.provider.out.QuikOrder;
 
 @SuppressWarnings("unused")

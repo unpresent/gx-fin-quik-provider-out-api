@@ -30,7 +30,7 @@ public class QuikSecurity extends QuikStandardDataObject {
     private final String id;
 
     /**
-     * Дата актуализации (т.е. дата, когда данная запись была опубликована.
+     * Дата актуализации (т.е. дата, когда данная запись была опубликована).
      * Для отслеживания устаревших записей.
      */
     @JsonFormat(pattern = "yyyy-MM-dd")

@@ -7,6 +7,7 @@ public abstract class QuikStandardDataPackage<T extends QuikStandardDataObject> 
     /**
      * Общее количество записей в Quik-е
      */
+    @SuppressWarnings("unused")
     @JsonProperty
     public long allCount;
 
