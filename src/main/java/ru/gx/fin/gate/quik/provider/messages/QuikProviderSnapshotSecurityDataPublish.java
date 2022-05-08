@@ -9,6 +9,7 @@ import ru.gx.core.messaging.*;
 import ru.gx.fin.gate.quik.provider.config.QuikProviderMessageTypes;
 import ru.gx.fin.gate.quik.provider.out.QuikSecurity;
 
+import javax.activation.UnsupportedDataTypeException;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
@@ -38,7 +39,7 @@ public class QuikProviderSnapshotSecurityDataPublish
 
     @JsonCreator
     public QuikProviderSnapshotSecurityDataPublish(
-            @JsonProperty("header") @NotNull final StandardMessageHeader header,
+            @JsonProperty("header") @NotNull final MessageHeader header,
             @JsonProperty("body") @NotNull final QuikProviderSnapshotSecurityDataPublish.QuikProviderSnapshotSecurityDataPublishBody body,
             @JsonProperty("correlation") final @Nullable MessageCorrelation correlation
     ) {
@@ -49,7 +50,7 @@ public class QuikProviderSnapshotSecurityDataPublish
         @JsonCreator
         public QuikProviderSnapshotSecurityDataPublishBody(
                 @JsonProperty("dataObject") @NotNull final QuikSecurity dataObject
-        ) {
+        ) throws UnsupportedDataTypeException {
             super(dataObject);
         }
     }
